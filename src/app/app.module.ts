@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import * as CharactersReducer from './reducers/character.reducer';
-import { EffectsModule } from '@ngrx/effects';
+import * as CharactersReducer from './store/reducers/character.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
-import { RickAndMortyEffects } from './effects/rickandmorty.effects';
 
 @NgModule({
   declarations: [
@@ -16,11 +16,12 @@ import { RickAndMortyEffects } from './effects/rickandmorty.effects';
   ],
   imports: [
     BrowserModule,
+		RouterModule,
+    AppRoutingModule, 
     StoreModule.forRoot({ characters: CharactersReducer.reducer}, {}),
-    EffectsModule.forRoot([RickAndMortyEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
-  providers: [],
+  providers: [], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

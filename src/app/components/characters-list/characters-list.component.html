@@ -1,0 +1,12 @@
+<div class="list">
+  <div class="terminal-container" *ngFor="let single of characters$ | async">
+    <!-- Terminal -->
+    <div class="terminal">
+      <pre>ID:{{ single.id }}</pre>
+      <pre>NAME:{{ single.name }}</pre>
+      <pre>FUERZA:{{ single.power }}</pre>
+    </div>
+  </div>
+</div>
+<div *ngIf="(characters$ | async)?.length == 0; else noCharacters"></div>
+<ng-template #noCharacters> <h4>No se encontraron datos</h4> </ng-template>
