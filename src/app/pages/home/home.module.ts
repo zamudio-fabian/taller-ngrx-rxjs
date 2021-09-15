@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import { CharactersListComponent } from 'src/app/components/characters-list/characters-list.component';
+import { HijoComponent } from 'src/app/components/hijo/hijo.component';
 
 @NgModule({
   imports: [
@@ -14,6 +14,6 @@ import { CharactersListComponent } from 'src/app/components/characters-list/char
     HomePageRoutingModule,
   ],
   declarations: [HomePage,
-    CharactersListComponent]
+    HijoComponent]
 })
 export class HomePageModule {}
