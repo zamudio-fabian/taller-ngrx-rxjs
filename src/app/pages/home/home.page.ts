@@ -16,6 +16,10 @@ export class HomePage implements OnInit {
     this.router.navigate(['/']);
   }
 
+  goToRickAndMortyList(): void {
+    this.router.navigate(['/rick-and-morty-list']);
+  }
+
   goToCreate(): void {
     this.router.navigate(['/create']);
   }

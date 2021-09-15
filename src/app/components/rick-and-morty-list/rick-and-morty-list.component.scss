@@ -1,0 +1,11 @@
+.list {
+  width: 960px;
+  max-width: 100%;
+
+  .card {
+    width: 30%;
+    min-width: 310px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+}
