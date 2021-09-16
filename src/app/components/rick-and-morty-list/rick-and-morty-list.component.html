@@ -1,0 +1,13 @@
+<div class="list">
+  <div
+    class="card"
+    (click)="goToDetail(single.id)"
+    *ngFor="let single of list$ | async"
+  >
+    <img [src]="single.image" />
+    <div class="footer">
+      <h4>{{ single.name }}</h4>
+      <p>{{ single.status }}</p>
+    </div>
+  </div>
+</div>

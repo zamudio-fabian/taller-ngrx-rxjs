@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Character } from 'src/app/models/character.model';
 import { CharacterState } from 'src/app/store/reducers/character.reducer';
 
-import { createCharacter } from 'src/app/store/actions/characters.actions';
+import { CreateCharacter } from 'src/app/store/actions/characters.actions';
 
 @Component({
   selector: 'app-create',
@@ -21,10 +21,14 @@ export class CreatePage {
     this.router.navigate(['/']);
   }
 
+  goToRickAndMortyList(): void {
+    this.router.navigate(['/rick-and-morty-list']);
+  }
+
   save(): void {
     if(this.character.name.length == 0) return;
     this.character.id = this._getGuid();
-    this.store.dispatch(createCharacter({ character: this.character } ));
+    this.store.dispatch(CreateCharacter({ character: this.character } ));
     this.goToList();
   }
 

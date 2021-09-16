@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'create',
     loadChildren: () => import('./pages/create/create.module').then(m => m.CreatePageModule)
   },
+  {
+    path: 'rick-and-morty-list',
+    loadChildren: () => import('./pages/rick-and-morty-list/rick-and-morty-list.module').then(m => m.RickAndMortyListPageModule)
+  },
 
 ];
 
